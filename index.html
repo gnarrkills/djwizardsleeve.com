@@ -7,6 +7,23 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <img src="djwizardsleeve.com_logo.png" alt="DJ Wizard Sleeve logo">
+  <img id="logo" src="djwizardsleeve.com_logo.png" alt="DJ Wizard Sleeve logo">
+
+  <script>
+    // Add your other logo filenames here, in the order you want them to cycle
+    const logos = [
+      "djwizardsleeve.com_logo.png",
+      "djwizardsleeve.com_logo2.png",
+      "djwizardsleeve.com_logo3.png"
+    ];
+
+    let currentIndex = 0;
+    const logoImg = document.getElementById("logo");
+
+    logoImg.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % logos.length;
+      logoImg.src = logos[currentIndex];
+    });
+  </script>
 </body>
 </html>
